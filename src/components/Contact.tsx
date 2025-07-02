@@ -4,10 +4,10 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { SiLinkedin, SiGithub } from "react-icons/si";
 import { useState } from "react";
-import { useToast } from "@/components/ui/use-toast"; // ✅ Toast hook
+import { useToast } from "@/components/ui/use-toast";
 
 const Contact = () => {
-  const { toast } = useToast(); // ✅ Toast initializer
+  const { toast } = useToast();
 
   const [formData, setFormData] = useState({
     name: '',
@@ -15,29 +15,39 @@ const Contact = () => {
     message: ''
   });
 
+ const encode = (data: Record<string, string>) =>
+    Object.keys(data)
+      .map(
+        (key) => encodeURIComponent(key) + "=" + encodeURIComponent(data[key])
+      )
+      .join("&");
+
   const handleSubmit = async (e: React.FormEvent) => {
-  e.preventDefault();
+    e.preventDefault();
 
-  const form = new FormData();
-  form.append("form-name", "contact");
-  form.append("name", formData.name);
-  form.append("email", formData.email);
-  form.append("message", formData.message);
+    try {
+      await fetch("/", {
+        method: "POST",
+        headers: { "Content-Type": "application/x-www-form-urlencoded" },
+        body: encode({
+          "form-name": "contact",
+          ...formData,
+        }),
+      });
 
-  try {
-    await fetch("/", {
-      method: "POST",
-      body: form,
-      headers: { "Content-Type": "application/x-www-form-urlencoded" },
-    });
+      toast({
+        title: "Success",
+        description: "Thanks for reaching out. I'll get back to you soon.",
+      });
 
-    toast({ title: "Success", description: "Thanks for reaching out. I'll get back to you soon." });
-
-    setFormData({ name: "", email: "", message: "" });
-  } catch (error) {
-    toast({ title: "Error", description: "Something went wrong." });
-  }
-};
+      setFormData({ name: "", email: "", message: "" });
+    } catch (error) {
+      toast({
+        title: "Error",
+        description: "Something went wrong. Please try again.",
+      });
+    }
+  };
 
   const handleInputChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
