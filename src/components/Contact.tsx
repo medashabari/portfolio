@@ -4,8 +4,11 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { SiLinkedin, SiGithub } from "react-icons/si";
 import { useState } from "react";
+import { useToast } from "@/components/ui/use-toast"; // ✅ Toast hook
 
 const Contact = () => {
+  const { toast } = useToast(); // ✅ Toast initializer
+
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -14,11 +17,22 @@ const Contact = () => {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    // Handle form submission
-    console.log('Form submitted:', formData);
+
+    toast({
+      title: "Message Sent!",
+      description: "Thanks for reaching out. I'll get back to you soon.",
+    });
+
+    setFormData({
+      name: '',
+      email: '',
+      message: ''
+    });
   };
 
-  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+  const handleInputChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => {
     setFormData({
       ...formData,
       [e.target.name]: e.target.value
@@ -92,6 +106,7 @@ const Contact = () => {
                 >
                   <input type="hidden" name="bot-field" />
                   <input type="hidden" name="form-name" value="contact" />
+
                   <div>
                     <label
                       htmlFor="name"

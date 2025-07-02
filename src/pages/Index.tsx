@@ -4,6 +4,7 @@ import Projects from "@/components/Projects";
 import Experience from "@/components/Experience";
 import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
+import { Toaster } from "@/components/ui/toaster";
 
 const Index = () => {
   return (
@@ -14,6 +15,7 @@ const Index = () => {
       <Experience />
       <Contact />
       <Footer />
+      <Toaster />
     </div>
   );
 };
