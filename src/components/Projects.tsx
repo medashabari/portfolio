@@ -1,45 +1,71 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Button } from "@/components/ui/button";
-import { Github } from "lucide-react";
+// import { Button } from "@/components/ui/button";
+// import { Github } from "lucide-react";
 import project1 from "@/assets/project1.png";
 import project2 from "@/assets/project2.png";
 import project3 from "@/assets/project3.png";
 import project4 from "@/assets/project4.png";
-
+import project5 from "@/assets/project5.png";
 
 const Projects = () => {
   const projects = [
     {
       title: "Traffic Violation Platform",
-      description: "Microservice-based backend using Django & PostgreSQL with role-based workflow for reviewing video violations. Integrated payment portal via Zill Money API with S3 file management and scheduled jobs.",
+      description:
+        "Microservice-based backend using Django & PostgreSQL with role-based workflow for reviewing video violations. Integrated payment portal via Zill Money API with S3 file management and scheduled jobs.",
       image: project3,
-      tech: ["Python", "Django", "PostgreSQL", "S3","AWS", ,"Microservices"],
+      tech: ["Python", "Django", "PostgreSQL", "S3", "AWS", , "Microservices"],
       liveUrl: "#",
-      githubUrl: "#"
+      githubUrl: "#",
     },
     {
       title: "Budget Analysis Platform",
-      description: "Backend system with Azure Document Intelligence to process invoices, Redis caching for performance, and RBAC for data security. Features Azure Entra popup login with backend token verification.",
+      description:
+        "Backend system with Azure Document Intelligence to process invoices, Redis caching for performance, and RBAC for data security. Features Azure Entra popup login with backend token verification.",
       image: project2,
-      tech: ["Python", "MySQL", "Azure Document Intelligence", "Redis", "Azure Entra"],
+      tech: [
+        "Python",
+        "MySQL",
+        "Azure Document Intelligence",
+        "Redis",
+        "Azure Entra",
+      ],
       liveUrl: "#",
-      githubUrl: "#"
+      githubUrl: "#",
     },
     {
       title: "Generative AI Product – Zuno",
-      description: "RAG-based AI assistant using FastAPI with embeddings stored in Milvus. Features RabbitMQ for async document processing, MongoDB aggregation, and Prometheus & Grafana monitoring.",
+      description:
+        "RAG-based AI assistant using FastAPI with embeddings stored in Milvus. Features RabbitMQ for async document processing, MongoDB aggregation, and Prometheus & Grafana monitoring.",
       image: project1,
-      tech: ["FastAPI", "Milvus", "RabbitMQ", "MongoDB", "Prometheus", "Grafana"],
+      tech: [
+        "FastAPI",
+        "Milvus",
+        "RabbitMQ",
+        "MongoDB",
+        "Prometheus",
+        "Grafana",
+      ],
       liveUrl: "#",
-      githubUrl: "#"
+      githubUrl: "#",
     },
     {
       title: "DevOps CI/CD for Go App",
-      description: "End-to-end DevOps pipeline for a Go web app. Containerized the app, created Kubernetes manifests, Helm charts, and GitHub Actions for testing, building Docker images, and tagging. Integrated ArgoCD for automatic deployment on push.",
+      description:
+        "End-to-end DevOps pipeline for a Go web app. Containerized the app, created Kubernetes manifests, Helm charts, and GitHub Actions for testing, building Docker images, and tagging. Integrated ArgoCD for automatic deployment on push.",
       image: project4,
       tech: ["Go", "Docker", "Kubernetes", "Helm", "GitHub Actions", "ArgoCD"],
       liveUrl: "#",
-      githubUrl: "https://github.com/medashabari/go-web-app-cicd"
+      githubUrl: "https://github.com/medashabari/go-web-app-cicd",
+    },
+    {
+      title: "AWS Infrastructure Automation with Terraform",
+      description:
+        "Provisioned complete AWS infrastructure using Terraform, including custom VPC, public subnets across multiple AZs, EC2 instances with key pair & security groups, and ALB for load balancing. Configured target groups and health checks with user data for bootstrap automation.",
+      image: project5,
+      tech: ["Terraform", "AWS", "EC2", "VPC", "ALB", "IaC"],
+      liveUrl: "#",
+      githubUrl: "#",
     },
   ];
 

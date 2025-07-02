@@ -34,23 +34,16 @@ const About = () => {
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <div className="animate-fade-in-up">
               <p className="text-lg text-muted-foreground mb-6 leading-relaxed">
-                Hello! I'm Shabarish Meda, a backend developer with nearly 2
-                years of experience in building scalable, cloud-native
-                applications. I hold a Bachelor's degree in Computer
-                Science and Engineering, which I completed in 2023 from
-                Santhiram Engineering College. Since then, I've been working at
-                Tenzai Systems, contributing to real-world systems across
-                traffic enforcement, healthcare, and AI domains using Python and
-                modern backend tools.
+                Hello! I'm Shabarish Meda, a backend developer with 1.9+ years of experience in building scalable, cloud-native applications. 
+                I work at Tenzai Systems, where I’ve contributed to real-world systems like traffic enforcement, budget analysis, and Gen AI using Python and modern backend tools.
               </p>
               <p className="text-lg text-muted-foreground mb-6 leading-relaxed">
                 I specialize in backend development, containerization, and cloud-native architectures
                 with a strong focus on scalability and automation.
               </p>
               <p className="text-lg text-muted-foreground leading-relaxed">
-                I hold a Kubernetes and Cloud Native Associate certification and
-                continuously stay updated with the latest in cloud technologies,
-                automation, and system architecture.
+                I graduated in 2023 with a Bachelor’s in Computer Science and Engineering from Santhiram Engineering College, and I’m a certified Kubernetes and Cloud Native Associate. 
+                I’m passionate about staying current with evolving trends in cloud tech, automation, and system design.
               </p>
             </div>
 
