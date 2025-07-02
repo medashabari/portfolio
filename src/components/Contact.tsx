@@ -15,20 +15,29 @@ const Contact = () => {
     message: ''
   });
 
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
+  const handleSubmit = async (e: React.FormEvent) => {
+  e.preventDefault();
 
-    toast({
-      title: "Message Sent!",
-      description: "Thanks for reaching out. I'll get back to you soon.",
+  const form = new FormData();
+  form.append("form-name", "contact");
+  form.append("name", formData.name);
+  form.append("email", formData.email);
+  form.append("message", formData.message);
+
+  try {
+    await fetch("/", {
+      method: "POST",
+      body: form,
+      headers: { "Content-Type": "application/x-www-form-urlencoded" },
     });
 
-    setFormData({
-      name: '',
-      email: '',
-      message: ''
-    });
-  };
+    toast({ title: "Success", description: "Thanks for reaching out. I'll get back to you soon." });
+
+    setFormData({ name: "", email: "", message: "" });
+  } catch (error) {
+    toast({ title: "Error", description: "Something went wrong." });
+  }
+};
 
   const handleInputChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
