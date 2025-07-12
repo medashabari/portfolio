@@ -5,18 +5,22 @@ const Experience = () => {
   const experiences = [
     {
       company: "Tenzai Systems",
-      role: "Backend Developer",
+      role: "Software Engineer",
       period: "Sep 2023 - Present",
-      description: "Developing scalable backend systems using Python, FastAPI, and cloud technologies. Working on microservices architecture, containerization, and DevOps practices.",
+      description:
+        "Developing scalable backend systems using Python, FastAPI, and cloud technologies. Working on microservices architecture, containerization, and DevOps practices.",
       achievements: [
-        "Worked on microservice-based traffic violation platform with Django and PostgreSQL",
-        "Implemented Azure Document Intelligence for budget analysis",
-        "Developed RAG-based AI assistant with vector embeddings",
-        "Optimized system performance with Redis caching and monitoring",
-        "Built CI/CD pipelines with GitHub Actions and Docker",
-        "Achieved Kubernetes and Cloud Native Associate certification"
-      ]
-    }
+        "Designed and implemented a citation management system using Python Django and PostgreSQL, enabling traffic enforcement agencies to process 3000+ violations monthly with 99.99% data accuracy and integrity.",
+        "Developed multiple data pipelines capable of managing image and video data from various sources (APIs, S3 buckets etc.),loading the data to AWS RDS.",
+        "Boosted the stability and speed of data pipelines by 80% reducing the processing time from 5 hours to 1 hour.",
+        "Integrated Xpress Bill Pay APIs into the citation platform, boosting online fine collection success rate by 30%.",
+        "Built a real‑time Grafana dashboard to track payment KPIs, providing actionable insights and helped with new camera placements.",
+        "Planned and created the end-to-end DevOps automation pipeline for the application.",
+        "Orchestrated Kubernetes Pods in scalable EKS clusters to improve uptime by 99%.",
+        "Maintained security and robustness of the application with Private ECR registries and secrets manager.",
+        "Maintained accurate documentation of API integrations and deployment procedures.",
+      ],
+    },
   ];
 
   return (
@@ -26,7 +30,7 @@ const Experience = () => {
           <h2 className="text-4xl md:text-5xl font-bold text-center mb-16 text-primary">
             Experience
           </h2>
-          
+
           <div className="space-y-8 mb-12">
             {experiences.map((exp, index) => (
               <Card key={index} className="card-elegant border-0">
@@ -42,14 +46,17 @@ const Experience = () => {
                     </div>
                     <span className="skill-tag">{exp.period}</span>
                   </div>
-                  
+
                   <p className="text-muted-foreground mb-4 leading-relaxed">
                     {exp.description}
                   </p>
-                  
+
                   <ul className="space-y-2">
                     {exp.achievements.map((achievement, i) => (
-                      <li key={i} className="flex items-center text-sm text-muted-foreground">
+                      <li
+                        key={i}
+                        className="flex items-center text-sm text-muted-foreground"
+                      >
                         <span className="w-2 h-2 bg-primary rounded-full mr-3 flex-shrink-0"></span>
                         {achievement}
                       </li>
@@ -59,15 +66,15 @@ const Experience = () => {
               </Card>
             ))}
           </div>
-          
+
           <div className="text-center">
-            <Button 
-              size="lg" 
+            <Button
+              size="lg"
               className="px-8 py-3"
               onClick={() => {
-                const link = document.createElement('a');
-                link.href = '/Meda Shabarish - Resume.pdf';
-                link.download = 'Meda Shabarish - Resume.pdf';
+                const link = document.createElement("a");
+                link.href = "/Meda Shabarish - Resume.pdf";
+                link.download = "Meda Shabarish - Resume.pdf";
                 link.click();
               }}
             >
