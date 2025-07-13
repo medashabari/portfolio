@@ -14,11 +14,10 @@ const Experience = () => {
         "Developed multiple data pipelines capable of managing image and video data from various sources (APIs, S3 buckets etc.),loading the data to AWS RDS.",
         "Boosted the stability and speed of data pipelines by 80% reducing the processing time from 5 hours to 1 hour.",
         "Integrated Xpress Bill Pay APIs into the citation platform, boosting online fine collection success rate by 30%.",
-        "Built a real‑time Grafana dashboard to track payment KPIs, providing actionable insights and helped with new camera placements.",
-        "Planned and created the end-to-end DevOps automation pipeline for the application.",
-        "Orchestrated Kubernetes Pods in scalable EKS clusters to improve uptime by 99%.",
-        "Maintained security and robustness of the application with Private ECR registries and secrets manager.",
-        "Maintained accurate documentation of API integrations and deployment procedures.",
+        "Planned and created the end-to-end DevOps automation pipeline, reducing manual deployment errors by 40% and accelerating release frequency by 3x",
+        "Orchestrated Kubernetes deployments in scalable EKS clusters to improve uptime by 99%.",
+        "Ensured secure deployments and container image integrity using AWS Private ECR and Secrets Manager.",
+         "Created  and  maintained  technical  documentation  for  API  integrations,  CI/CD  workflows  and  deployment procedures"
       ],
     },
   ];
